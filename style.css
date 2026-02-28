@@ -1,0 +1,293 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo {
+  text-align: center;
+  padding: 20px;
+  font-size: 28px;
+  color: #d4af37;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.producto {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s ease;
+  border: 1px solid #222;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 12px rgba(212,175,55,0.3);
+}
+
+.producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.producto h3 {
+  margin: 10px 0;
+}
+
+.precio {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d4af37;
+}
+
+/* BOTÓN PRODUCTO */
+.producto button {
+  padding: 8px 15px;
+  border: none;
+  background: linear-gradient(45deg, #c9a227, #f1d76a);
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.producto button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #d4af37;
+}
+
+/* =========================
+   BOTÓN CARRITO FLOTANTE
+========================= */
+
+.boton-carrito {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #d4af37;
+  color: black;
+  padding: 12px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(212,175,55,0.5);
+}
+
+/* =========================
+   CARRITO LATERAL
+========================= */
+
+#carrito {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 350px;
+  height: 100%;
+  background: #141414;
+  padding: 20px;
+  transition: 0.3s ease;
+  overflow-y: auto;
+  z-index: 1000;
+  border-left: 2px solid #d4af37;
+}
+
+#carrito h2 {
+  margin-bottom: 20px;
+  color: #d4af37;
+}
+
+.item-carrito {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.cantidad-control button {
+  padding: 4px 10px;
+  border: none;
+  background: #d4af37;
+  color: black;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.cantidad-control span {
+  font-weight: bold;
+}
+
+/* =========================
+   BOTONES CARRITO
+========================= */
+
+.vaciar,
+.whatsapp-carrito {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.vaciar {
+  background: #8b0000;
+  color: white;
+}
+
+.vaciar:hover {
+  background: #a30000;
+}
+
+.whatsapp-carrito {
+  background: linear-gradient(45deg, #c9a227, #f1d76a);
+  color: black;
+}
+
+.whatsapp-carrito:hover {
+  box-shadow: 0 0 10px #d4af37;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 999;
+}
+
+/* =========================
+   MODAL PRODUCTO
+========================= */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-contenido {
+  background: #141414;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  animation: aparecer 0.3s ease;
+  border: 1px solid #d4af37;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #d4af37;
+}
+
+.modal-imagen-principal {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-miniaturas {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.modal-miniaturas img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.modal-miniaturas img:hover {
+  opacity: 1;
+}
+
+.modal-precio {
+  color: #d4af37;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn-agregar-modal {
+  background: linear-gradient(45deg, #c9a227, #f1d76a);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn-agregar-modal:hover {
+  box-shadow: 0 0 10px #d4af37;
+}
