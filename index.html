@@ -10,7 +10,7 @@
     
   <body>
   <input type="text" id="buscador" placeholder="Buscar producto..." />
-<h1 class="titulo">Market Boom Co ✨</h1>
+<h3 class="titulo">Market Boom Co ✨</h3>
 
 <div class="productos" id="contenedor-productos"></div>
 
@@ -20,43 +20,21 @@
 
 <div id="overlay" onclick="cerrarCarrito()"></div>
 
-<!-- =========================
-     CARRITO
-========================= -->
-
 <div id="carrito">
   <h2>🛒 Carrito</h2>
   <div id="lista-carrito"></div>
-
-  <button class="vaciar" onclick="vaciarCarrito()">
-    Vaciar carrito
-  </button>
-
-  <button class="whatsapp-carrito" onclick="abrirWhatsApp()">
-    Enviar pedido por WhatsApp
-  </button>
+  <button class="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button class="whatsapp-carrito" onclick="abrirWhatsApp()">Enviar pedido por WhatsApp</button>
 </div>
-
-<!-- =========================
-     MODAL PRODUCTO
-========================= -->
 
 <div id="modal-producto" class="modal">
   <div class="modal-contenido">
-    
     <span class="cerrar-modal" onclick="cerrarModal()">✕</span>
-
     <img id="modal-imagen-principal" class="modal-imagen-principal">
-
     <div id="modal-miniaturas" class="modal-miniaturas"></div>
-
     <h2 id="modal-nombre"></h2>
     <p id="modal-precio" class="modal-precio"></p>
-
-    <button id="modal-agregar" class="btn-agregar-modal">
-      Agregar al carrito
-    </button>
-
+    <button id="modal-agregar" class="btn-agregar-modal">Agregar al carrito</button>
   </div>
 </div>
     <script  src="./script.js"></script>

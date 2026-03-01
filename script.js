@@ -1,16 +1,41 @@
 /* =========================
+   EFECTO SCROLL REVELADO (PRIMERO)
+========================= */
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+function activarAnimacionScroll() {
+  const productosScroll = document.querySelectorAll(".producto");
+  productosScroll.forEach(producto => {
+    observer.observe(producto);
+  });
+}
+
+/* =========================
    PRODUCTOS
 ========================= */
 
 const productos = [
- { nombre: "GRUPO1", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
- { nombre: "GRUPO2", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
- { nombre: "GRUPO3", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
+{ nombre: "GRUPO6", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
+
+{ nombre: "GRUPO1", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
+{ nombre: "GRUPO2", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
+  { nombre: "GRUPO3", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
  { nombre: "GRUPO4", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
- { nombre: "GRUPO5", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
- { nombre: "GRUPO6", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
- { nombre: "GRUPO7", precio: 10000, imagen: "https://m.media-amazon.com/images/I/61q-8624j6L._AC_UY1000_.jpg" },
- { nombre: "GRUPO8", precio: 10000, imagen: "https://i.pinimg.com/170x/cb/d4/13/cbd4136ba81708b3f480faa9e10b12f0.jpg" }
+ { nombre: "GRUPO5", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
+ { nombre: "GRUPO6", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
+ { nombre: "GRUPO7", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
+ { nombre: "GRUPO8", precio: 10000, imagen: 
+"https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
+ { nombre: "GRUPO9", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
+ { nombre: "GRUPO10", precio: 10000, imagen: "https://m.media-amazon.com/images/I/61q-8624j6L._AC_UY1000_.jpg" },
+ { nombre: "GRUPO11", precio: 10000, imagen: "https://i.pinimg.com/170x/cb/d4/13/cbd4136ba81708b3f480faa9e10b12f0.jpg" }
 ];
 
 /* =========================
@@ -26,16 +51,10 @@ function mostrarProductos(lista = productos) {
     card.classList.add("producto");
 
     card.innerHTML = `
-      <img src="${producto.imagen}" 
-           alt="${producto.nombre}" 
-           class="imagen-producto">
-
+      <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-producto">
       <h3>${producto.nombre}</h3>
       <p class="precio">$ ${producto.precio.toLocaleString()}</p>
-
-      <button class="btn-agregar">
-        Agregar al carrito
-      </button>
+      <button class="btn-agregar">Agregar al carrito</button>
     `;
 
     card.querySelector(".imagen-producto").addEventListener("click", () => {
@@ -48,9 +67,14 @@ function mostrarProductos(lista = productos) {
 
     contenedor.appendChild(card);
   });
+
+  activarAnimacionScroll();
 }
 
-mostrarProductos();
+document.addEventListener("DOMContentLoaded", () => {
+  mostrarProductos();
+  actualizarCarrito();
+});
 
 /* =========================
    BUSCADOR
@@ -101,6 +125,8 @@ function actualizarCarrito() {
   const lista = document.getElementById("lista-carrito");
   const contador = document.getElementById("contador");
 
+  if (!lista || !contador) return;
+
   lista.innerHTML = "";
   let totalProductos = 0;
   let totalDinero = 0;
@@ -116,13 +142,11 @@ function actualizarCarrito() {
 
     div.innerHTML = `
       <p><strong>${producto}</strong></p>
-
       <div class="cantidad-control">
         <button onclick="cambiarCantidad('${producto}', -1)">−</button>
         <span>${item.cantidad}</span>
         <button onclick="cambiarCantidad('${producto}', 1)">+</button>
       </div>
-
       <p>$ ${(item.cantidad * item.precio).toLocaleString()}</p>
     `;
 
@@ -169,13 +193,14 @@ function abrirWhatsApp() {
     mensaje += `🛍 ${producto} x${item.cantidad} - $ ${(item.cantidad * item.precio).toLocaleString()}%0A`;
   });
 
-  mensaje += "%0AQuedo atento a confirmación. Gracias ✨";
+  mensaje += "%0AGracias ✨";
 
   window.open(`https://wa.me/573209182052?text=${mensaje}`, "_blank");
 }
 
 function animarContador() {
   const contador = document.getElementById("contador");
+  if (!contador) return;
 
   contador.style.transform = "scale(1.3)";
   contador.style.transition = "0.2s ease";
@@ -184,8 +209,6 @@ function animarContador() {
     contador.style.transform = "scale(1)";
   }, 200);
 }
-
-actualizarCarrito();
 
 /* =========================
    MODAL
@@ -205,26 +228,4 @@ function abrirModal(producto) {
 
 function cerrarModal() {
   document.getElementById("modal-producto").style.display = "none";
-/* =========================
-   EFECTO SCROLL REVELADO
-========================= */
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, {
-  threshold: 0.2
-});
-
-function activarAnimacionScroll() {
-  const productos = document.querySelectorAll(".producto");
-  productos.forEach(producto => {
-    observer.observe(producto);
-  });
-}
-
-activarAnimacionScroll();
 }
