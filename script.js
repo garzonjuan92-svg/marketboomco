@@ -17,11 +17,11 @@ const productos = [
    MOSTRAR PRODUCTOS
 ========================= */
 
-function mostrarProductos() {
+function mostrarProductos(lista = productos) {
   const contenedor = document.getElementById("contenedor-productos");
   contenedor.innerHTML = "";
 
-  productos.forEach(producto => {
+  lista.forEach(producto => {
     const card = document.createElement("div");
     card.classList.add("producto");
 
@@ -38,7 +38,6 @@ function mostrarProductos() {
       </button>
     `;
 
-    // Eventos
     card.querySelector(".imagen-producto").addEventListener("click", () => {
       abrirModal(producto);
     });
@@ -52,6 +51,22 @@ function mostrarProductos() {
 }
 
 mostrarProductos();
+
+/* =========================
+   BUSCADOR
+========================= */
+
+const buscador = document.getElementById("buscador");
+
+buscador.addEventListener("input", function () {
+  const texto = this.value.toLowerCase();
+
+  const productosFiltrados = productos.filter(producto =>
+    producto.nombre.toLowerCase().includes(texto)
+  );
+
+  mostrarProductos(productosFiltrados);
+});
 
 /* =========================
    CARRITO
@@ -190,4 +205,26 @@ function abrirModal(producto) {
 
 function cerrarModal() {
   document.getElementById("modal-producto").style.display = "none";
+/* =========================
+   EFECTO SCROLL REVELADO
+========================= */
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+function activarAnimacionScroll() {
+  const productos = document.querySelectorAll(".producto");
+  productos.forEach(producto => {
+    observer.observe(producto);
+  });
+}
+
+activarAnimacionScroll();
 }
