@@ -10,31 +10,88 @@
     
   <body>
   <input type="text" id="buscador" placeholder="Buscar producto..." />
+
 <h3 class="titulo">Market Boom Co ✨</h3>
 
 <div class="productos" id="contenedor-productos"></div>
+
+<!-- ========================
+      BOTONES FLOTANTES
+======================== -->
 
 <div class="boton-carrito" onclick="abrirCarrito()">
   🛒 <span id="contador">0</span>
 </div>
 
+<div class="boton-favoritos" onclick="abrirFavoritos()">
+  ❤️ <span id="contador-favoritos">0</span>
+</div>
+
 <div id="overlay" onclick="cerrarCarrito()"></div>
 
+<!-- ========================
+      CARRITO
+======================== -->
 <div id="carrito">
   <h2>🛒 Carrito</h2>
   <div id="lista-carrito"></div>
-  <button class="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-  <button class="whatsapp-carrito" onclick="abrirWhatsApp()">Enviar pedido por WhatsApp</button>
+
+  <button class="vaciar" onclick="vaciarCarrito()">
+    Vaciar carrito
+  </button>
+
+  <button class="whatsapp-carrito" onclick="abrirWhatsApp()">
+    Enviar pedido por WhatsApp
+  </button>
 </div>
 
+<!-- ========================
+      FAVORITOS
+======================== -->
+<div id="favoritos-panel">
+  <h2>❤️ Favoritos</h2>
+  <div id="lista-favoritos"></div>
+
+  <button class="cerrar-favoritos" onclick="cerrarFavoritos()">
+    Cerrar
+  </button>
+</div>
+
+<!-- ========================
+      MODAL PRODUCTO
+======================== -->
 <div id="modal-producto" class="modal">
   <div class="modal-contenido">
-    <span class="cerrar-modal" onclick="cerrarModal()">✕</span>
-    <img id="modal-imagen-principal" class="modal-imagen-principal">
+
+    <!-- BOTÓN CERRAR BIEN POSICIONADO -->
+    <span class="cerrar-modal" onclick="cerrarModal()">
+      &times;
+    </span>
+
+    <!-- IMAGEN PRINCIPAL -->
+    <img 
+      id="modal-imagen-principal" 
+      class="modal-imagen-principal"
+      src=""
+      alt="Producto"
+    >
+
+    <!-- MINIATURAS -->
     <div id="modal-miniaturas" class="modal-miniaturas"></div>
+
+    <!-- INFORMACIÓN -->
     <h2 id="modal-nombre"></h2>
     <p id="modal-precio" class="modal-precio"></p>
-    <button id="modal-agregar" class="btn-agregar-modal">Agregar al carrito</button>
+
+    <!-- BOTÓN AGREGAR -->
+    <button 
+      id="modal-agregar" 
+      class="btn-agregar-modal"
+      type="button"
+    >
+      Agregar al carrito
+    </button>
+
   </div>
 </div>
     <script  src="./script.js"></script>
