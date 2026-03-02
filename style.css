@@ -390,3 +390,124 @@ body{
 .btn-favorito.activo {
   color: #ff2e2e;
 }
+body.light {
+  background-color: #ffffff;
+  color: #111;
+}
+
+body.dark {
+  background-color: #111;
+  color: #ffffff;
+}
+
+body.dark .producto {
+  background-color: #1e1e1e;
+}
+
+body.dark #carrito,
+body.dark #favoritos-panel,
+body.dark .modal-contenido {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+#toggle-tema {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+/* =========================
+   MODO CLARO - ARREGLO PANELES
+========================= */
+
+body.light #carrito,
+body.light #favoritos-panel,
+body.light .modal-contenido {
+  background-color: #ffffff;
+  color: #111;
+}
+
+body.light .item-carrito {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+body.light #lista-carrito h3 {
+  border-top: 1px solid #ccc;
+  color: #c9a227;
+}
+
+body.light .btn-favorito {
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+}
+
+body.light .btn-favorito:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+/* =========================
+   MODO CLARO CORRECTO PRODUCTOS
+========================= */
+
+body.light .producto {
+  background: #ffffff;
+  border: 1px solid #ddd;
+}
+
+body.light .producto h3,
+body.light .producto p,
+body.light .producto span {
+  color: #111 !important;
+}
+/* =========================
+   EFECTO BRILLO PREMIUM
+========================= */
+
+.producto {
+  overflow: hidden;
+}
+
+.producto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.producto:hover::before {
+  left: 100%;
+}
+/* =========================
+   EFECTO TOUCH PREMIUM MOVIL
+========================= */
+
+@media (max-width: 768px) {
+
+  .producto {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .producto:active {
+    transform: scale(0.97);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  .btn-agregar:active {
+    transform: scale(0.95);
+  }
+
+}

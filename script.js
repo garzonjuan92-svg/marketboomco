@@ -271,14 +271,37 @@ function cerrarModal() {
 }
 
 /* =========================
-   INICIO
+   INICIO + BUSCADOR
 ========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+
   mostrarProductos();
   actualizarCarrito();
   actualizarFavoritos();
+
+  const buscador = document.getElementById("buscador");
+
+  if (buscador) {
+    buscador.addEventListener("input", function () {
+
+      const texto = this.value.toLowerCase().trim();
+
+      if (texto === "") {
+        mostrarProductos(productos);
+        return;
+      }
+
+      const productosFiltrados = productos.filter(function (producto) {
+        return producto.nombre.toLowerCase().includes(texto);
+      });
+
+      mostrarProductos(productosFiltrados);
+    });
+  }
+
 });
+
 /* =========================
    ENVIAR CARRITO A WHATSAPP
 ========================= */
@@ -302,8 +325,44 @@ function abrirWhatsApp() {
 
   mensaje += `%0ATotal: $ ${total.toLocaleString()}`;
 
-  const numero = "573209182052"; // 👈 CAMBIA ESTE POR TU NUMERO
+  const numero = "573209182052";
   const url = `https://wa.me/${numero}?text=${mensaje}`;
 
   window.open(url, "_blank");
 }
+/* =========================
+   MODO OSCURO / CLARO
+========================= */
+
+function aplicarTema(tema) {
+  document.body.classList.remove("dark", "light");
+  document.body.classList.add(tema);
+  localStorage.setItem("tema", tema);
+
+  const boton = document.getElementById("toggle-tema");
+  if (boton) {
+    boton.textContent = tema === "dark" ? "☀️" : "🌙";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const botonTema = document.getElementById("toggle-tema");
+
+  const temaGuardado = localStorage.getItem("tema");
+
+  if (temaGuardado) {
+    aplicarTema(temaGuardado);
+  } else {
+    const modoOscuroSistema = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    aplicarTema(modoOscuroSistema ? "dark" : "light");
+  }
+
+  if (botonTema) {
+    botonTema.addEventListener("click", function () {
+      const temaActual = document.body.classList.contains("dark") ? "dark" : "light";
+      aplicarTema(temaActual === "dark" ? "light" : "dark");
+    });
+  }
+
+});
