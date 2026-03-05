@@ -18,23 +18,95 @@ function activarAnimacionScroll() {
 }
 
 /* =========================
-   PRODUCTOS
+   PRODUCTOS (CON CATEGORIA)
 ========================= */
 
 const productos = [
-{ nombre: "GRUPO6", precio: 10500, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
-{ nombre: "GRUPO1", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
-{ nombre: "GRUPO2", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
-{ nombre: "GRUPO3", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
-{ nombre: "GRUPO4", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
-{ nombre: "GRUPO5", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
-{ nombre: "GRUPO7", precio: 10000, imagen: "https://api.hhunt.es/storage/products/1748846588.webp" },
-{ nombre: "GRUPO8", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
-{ nombre: "GRUPO9", precio: 10000, imagen: "https://jemarescolombia.com/cdn/shop/files/RelojRichardMille_Rojo.jpg?v=1765590287&width=600" },
-{ nombre: "GRUPO10", precio: 10000, imagen: "https://m.media-amazon.com/images/I/61q-8624j6L._AC_UY1000_.jpg" },
-{ nombre: "GRUPO11", precio: 10000, imagen: "https://i.pinimg.com/170x/cb/d4/13/cbd4136ba81708b3f480faa9e10b12f0.jpg" }
+{ nombre: "Kit Infantil Decoración Fiesta - Cars X12 Invitados", precio: 32900, imagen: "https://http2.mlstatic.com/D_Q_NP_816141-MCO77248577888_072024-F.webp , https://picsum.photos/id/210/600/600, https://picsum.photos/id/211/600/600, https://picsum.photos/id/212/600/600", categoria: "pinateria" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Relleno De Juguetes Para Piñata 52 Piezas", precio: 32000, imagen: "https://http2.mlstatic.com/D_Q_NP_968971-MCO89436938973_082025-F.webp ,https://picsum.photos/id/213/600/600, https://picsum.photos/id/214/600/600, https://picsum.photos/id/215/600/600 ", categoria: "pinateria", descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Piñateria Pelotas Antiestres X12un Niños Fiesta Personajes Rojo", precio: 29900, imagen: "https://http2.mlstatic.com/D_Q_NP_989534-MCO91751551024_092025-F.webp , https://picsum.photos/id/208/600/600, https://picsum.photos/id/209/600/600 ", categoria: "pinateria" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Juguetes De Peluche Que Respira De Capibara", precio: 29625, imagen: "https://http2.mlstatic.com/D_Q_NP_710479-CBT107678290471_022026-F.webp,https://picsum.photos/id/210/600/600, https://picsum.photos/id/211/600/600, https://picsum.photos/id/212/600/600", categoria: "juguetes" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Lanzador Nerf Pro Gelfire Raid 10000 Recargable Blanco Hasbro", precio: 229900, imagen: "https://http2.mlstatic.com/D_Q_NP_898753-MLA99491192372_112025-F.webp,https://picsum.photos/id/213/600/600, https://picsum.photos/id/214/600/600, https://picsum.photos/id/215/600/600", categoria: "juguetes" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Carro Carreras Drift Control Remoto Niños Juguete Color Verde", precio: 74999, imagen: "https://http2.mlstatic.com/D_Q_NP_805706-MLA99506800054_112025-F.webp,https://http2.mlstatic.com/D_Q_NP_805706-MLA99506800054_112025-F.webp,https://picsum.photos/id/216/600/600, https://picsum.photos/id/217/600/600, https://picsum.photos/id/218/600/600", categoria: "juguetes" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Audífonos Bluetooth Skullcandy Push Play Active Negro", precio: 259900, imagen: "https://http2.mlstatic.com/D_Q_NP_693890-MLA96170625177_102025-F.webp,https://picsum.photos/id/219/600/600, https://picsum.photos/id/220/600/600, https://picsum.photos/id/221/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Pistola Masajeadora De Percusión Portátil Con 6 Velocidades", precio: 33165, imagen: "https://http2.mlstatic.com/D_Q_NP_629990-MLA78762182346_092024-F.webp,https://picsum.photos/id/222/600/600, https://picsum.photos/id/223/600/600, https://picsum.photos/id/224/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Consola Nintendo Switch 2", precio: 2032140, imagen: "https://http2.mlstatic.com/D_Q_NP_758871-MLA96097438383_102025-F.webp,https://picsum.photos/id/225/600/600, https://picsum.photos/id/226/600/600, https://picsum.photos/id/227/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Cepillo De Vapor 3 En 1 Masaje Autolimpieza Peine Para Gatos Color Verde lima", precio: 6439, imagen: "https://http2.mlstatic.com/D_Q_NP_711014-MLA92882265157_092025-F.webp,https://picsum.photos/id/228/600/600, https://picsum.photos/id/229/600/600, https://picsum.photos/id/230/600/600", categoria: "mascotas" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Fuente Bebedero Automático Mascotas Xalta Blanco 2.4L Triple Filtro", precio: 39900, imagen: "https://http2.mlstatic.com/D_Q_NP_751796-MLA92732597215_092025-F.webp,https://picsum.photos/id/201/600/600, https://picsum.photos/id/202/600/600, https://picsum.photos/id/203/600/600", categoria: "mascotas" , descripcion: "LO QUE TOQUE PONER DEL PRODUCTO" }
 ];
+/* =========================
+   MODAL (CON GALERÍA PRO)
+========================= */
 
+function abrirModal(producto) {
+  const modal = document.getElementById("modal-producto");
+  const modalImg = document.getElementById("modal-imagen-principal");
+  const modalNombre = document.getElementById("modal-nombre");
+  const modalPrecio = document.getElementById("modal-precio");
+  const modalDescripcion = document.getElementById("modal-descripcion");
+  const botonAgregar = document.getElementById("modal-agregar");
+  const overlay = document.getElementById("overlay");
+  const contenedorMiniaturas = document.getElementById("modal-miniaturas");
+
+  if (!modal || !modalImg || !modalNombre || !modalPrecio) return;
+
+  /* =========================
+     MANEJO DE MÚLTIPLES IMÁGENES
+  ========================= */
+
+  // Convertir string en array de imágenes
+  const imagenes = producto.imagen.split(",").map(img => img.trim());
+
+  // Imagen principal
+  modalImg.src = imagenes[0];
+
+  // Limpiar miniaturas anteriores
+  if (contenedorMiniaturas) {
+    contenedorMiniaturas.innerHTML = "";
+
+    imagenes.forEach(img => {
+      const mini = document.createElement("img");
+      mini.src = img;
+      mini.classList.add("miniatura");
+
+      mini.addEventListener("click", function () {
+        modalImg.src = img;
+      });
+
+      contenedorMiniaturas.appendChild(mini);
+    });
+  }
+
+  /* =========================
+     DATOS DEL PRODUCTO
+  ========================= */
+
+  modalNombre.textContent = producto.nombre;
+  modalPrecio.textContent = "$ " + producto.precio.toLocaleString();
+
+  if (modalDescripcion) {
+    modalDescripcion.textContent = producto.descripcion || "";
+  }
+
+  if (botonAgregar) {
+    botonAgregar.onclick = function () {
+      agregarAlCarrito(producto.nombre, producto.precio);
+    };
+  }
+
+  modal.classList.add("activo");
+  if (overlay) overlay.classList.add("activo");
+}
+
+function cerrarModal() {
+  const modal = document.getElementById("modal-producto");
+  const overlay = document.getElementById("overlay");
+
+  if (!modal || !overlay) return;
+
+  modal.classList.remove("activo");
+  overlay.classList.remove("activo");
+}
 /* =========================
    FAVORITOS
 ========================= */
@@ -52,14 +124,14 @@ function toggleFavorito(producto) {
 
   localStorage.setItem("favoritos", JSON.stringify(favoritos));
   actualizarFavoritos();
-  mostrarProductos();
+  mostrarProductos(productos);
 }
 
 function eliminarFavorito(nombre) {
   favoritos = favoritos.filter(p => p.nombre !== nombre);
   localStorage.setItem("favoritos", JSON.stringify(favoritos));
   actualizarFavoritos();
-  mostrarProductos();
+  mostrarProductos(productos);
 }
 
 function actualizarFavoritos() {
@@ -120,10 +192,16 @@ function mostrarProductos(lista = productos) {
 
     const card = document.createElement("div");
     card.classList.add("producto");
+    card.setAttribute("data-categoria", producto.categoria);
+
+    // ✅ Detecta si la imagen tiene varias URLs separadas por coma
+    const imagenPrincipal = producto.imagen.includes(",")
+      ? producto.imagen.split(",")[0].trim()
+      : producto.imagen;
 
     card.innerHTML = `
       <span class="btn-favorito ${esFavorito ? 'activo' : ''}">❤</span>
-      <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-producto">
+      <img src="${imagenPrincipal}" alt="${producto.nombre}" class="imagen-producto">
       <h3>${producto.nombre}</h3>
       <p class="precio">$ ${producto.precio.toLocaleString()}</p>
       <button class="btn-agregar">Agregar al carrito</button>
@@ -146,7 +224,6 @@ function mostrarProductos(lista = productos) {
 
   activarAnimacionScroll();
 }
-
 /* =========================
    CARRITO
 ========================= */
@@ -244,34 +321,7 @@ function animarContador() {
 }
 
 /* =========================
-   MODAL
-========================= */
-
-function abrirModal(producto) {
-  const modal = document.getElementById("modal-producto");
-  if (!modal) return;
-
-  modal.classList.add("activo");
-
-  document.getElementById("modal-imagen-principal").src = producto.imagen;
-  document.getElementById("modal-nombre").textContent = producto.nombre;
-  document.getElementById("modal-precio").textContent =
-    "$ " + producto.precio.toLocaleString();
-
-  document.getElementById("modal-agregar").onclick = function () {
-    agregarAlCarrito(producto.nombre, producto.precio);
-    cerrarModal();
-  };
-}
-
-function cerrarModal() {
-  const modal = document.getElementById("modal-producto");
-  if (!modal) return;
-  modal.classList.remove("activo");
-}
-
-/* =========================
-   INICIO + BUSCADOR
+   FILTRO POR CATEGORIAS
 ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -279,6 +329,26 @@ document.addEventListener("DOMContentLoaded", function () {
   mostrarProductos();
   actualizarCarrito();
   actualizarFavoritos();
+
+  const botonesFiltro = document.querySelectorAll(".filtro-btn");
+
+  botonesFiltro.forEach(boton => {
+    boton.addEventListener("click", function () {
+
+      botonesFiltro.forEach(btn => btn.classList.remove("activo"));
+      this.classList.add("activo");
+
+      const categoria = this.getAttribute("data-categoria");
+
+      if (categoria === "todos") {
+        mostrarProductos(productos);
+      } else {
+        const filtrados = productos.filter(p => p.categoria === categoria);
+        mostrarProductos(filtrados);
+      }
+
+    });
+  });
 
   const buscador = document.getElementById("buscador");
 
@@ -303,66 +373,116 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* =========================
-   ENVIAR CARRITO A WHATSAPP
+   MODO DIA / NOCHE
+========================= */
+
+const botonTema = document.getElementById("toggle-tema");
+
+if (botonTema) {
+
+  // Cargar tema guardado
+  const temaGuardado = localStorage.getItem("tema");
+
+  if (temaGuardado === "oscuro") {
+    document.body.classList.add("modo-oscuro");
+    botonTema.textContent = "☀️";
+  }
+
+  botonTema.addEventListener("click", function () {
+    document.body.classList.toggle("modo-oscuro");
+
+    if (document.body.classList.contains("modo-oscuro")) {
+      localStorage.setItem("tema", "oscuro");
+      botonTema.textContent = "☀️";
+    } else {
+      localStorage.setItem("tema", "claro");
+      botonTema.textContent = "🌙";
+    }
+  });
+
+}
+
+const btnTop = document.getElementById("btn-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    btnTop.style.display = "block";
+  } else {
+    btnTop.style.display = "none";
+  }
+});
+
+btnTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+/* =========================
+   FUNCION ENVIAR CARRITO POR WHATSAPP
 ========================= */
 
 function abrirWhatsApp() {
-  if (Object.keys(carrito).length === 0) {
-    alert("El carrito está vacío 🛒");
-    return;
-  }
-
-  let mensaje = "Hola, quiero comprar:%0A%0A";
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || {};
+  let mensaje = "Hola! Quiero hacer el siguiente pedido:%0A";
   let total = 0;
 
   for (let producto in carrito) {
     const item = carrito[producto];
     const subtotal = item.cantidad * item.precio;
     total += subtotal;
-
-    mensaje += `• ${producto} x${item.cantidad} - $ ${subtotal.toLocaleString()}%0A`;
+    mensaje += `- ${producto} x${item.cantidad} = $${subtotal.toLocaleString()}%0A`;
   }
 
-  mensaje += `%0ATotal: $ ${total.toLocaleString()}`;
+  mensaje += `%0ATotal: $${total.toLocaleString()}`; // Agrega total al final
 
-  const numero = "573209182052";
-  const url = `https://wa.me/${numero}?text=${mensaje}`;
-
+  // Reemplaza con tu número en formato internacional
+  const url = `https://wa.me/573209182052?text=${mensaje}`;
   window.open(url, "_blank");
 }
-/* =========================
-   MODO OSCURO / CLARO
-========================= */
-
-function aplicarTema(tema) {
-  document.body.classList.remove("dark", "light");
-  document.body.classList.add(tema);
-  localStorage.setItem("tema", tema);
-
-  const boton = document.getElementById("toggle-tema");
-  if (boton) {
-    boton.textContent = tema === "dark" ? "☀️" : "🌙";
+function togglePablo() {
+  const opciones = document.getElementById("pabloOptions");
+  if (opciones.style.display === "flex") {
+    opciones.style.display = "none";
+  } else {
+    opciones.style.display = "flex";
   }
 }
+function toggleMenu() {
 
-document.addEventListener("DOMContentLoaded", function () {
+  let menu = document.getElementById("menuLateral");
 
-  const botonTema = document.getElementById("toggle-tema");
+  if (!menu) return;
 
-  const temaGuardado = localStorage.getItem("tema");
-
-  if (temaGuardado) {
-    aplicarTema(temaGuardado);
+  if (menu.style.left === "0px") {
+    menu.style.left = "-250px";
   } else {
-    const modoOscuroSistema = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    aplicarTema(modoOscuroSistema ? "dark" : "light");
+    menu.style.left = "0px";
   }
 
-  if (botonTema) {
-    botonTema.addEventListener("click", function () {
-      const temaActual = document.body.classList.contains("dark") ? "dark" : "light";
-      aplicarTema(temaActual === "dark" ? "light" : "dark");
-    });
-  }
+}
+/* =========================
+   FILTRO DESDE MENU LATERAL
+========================= */
+
+document.querySelectorAll("#menuLateral a[data-categoria]").forEach(link => {
+
+  link.addEventListener("click", function(e) {
+
+    e.preventDefault(); // evita que el link recargue la página
+
+    const categoria = this.getAttribute("data-categoria");
+
+    if (categoria === "todos") {
+      mostrarProductos(productos);
+    } else {
+      const filtrados = productos.filter(p => p.categoria === categoria);
+      mostrarProductos(filtrados);
+    }
+
+    toggleMenu(); // cierra el menú después de elegir
+
+  });
 
 });

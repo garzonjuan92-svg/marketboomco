@@ -9,89 +9,242 @@
   </head>
     
   <body>
-  <input type="text" id="buscador" placeholder="Buscar producto..." />
+  <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ICONOS REDES SOCIALES -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+
+<!-- BOTON MENU HAMBURGUESA -->
+<div class="menu-hamburguesa" onclick="toggleMenu()">
+☰
+</div>
+
+<!-- MENU DESPLEGABLE -->
+<div class="menu-lateral" id="menuLateral">
+
+<h3>JP</h3>
+
+<h3>📦 Categorías</h3>
+
+<a href="#" data-categoria="tecnologia">💻 Tecnología</a>
+<a href="#" data-categoria="pinateria">🎉 Piñatería</a>
+<a href="#" data-categoria="mascotas">🐶 Mascotas</a>
+<a href="#" data-categoria="juguetes">🧸 Juguetes</a>
+<a href="#" data-categoria="jugutes niña">🧸 Juguetes niña</a>
+
+<h3>ℹ️ Información</h3>
+
+<a href="#">⭐ Nuestra esencia</a>
+
+</div>
+
+
+<input type="text" id="buscador" placeholder="Buscar producto..." />
 
 <button id="toggle-tema">🌙</button>
 
 <h3 class="titulo">Market Boom Co ✨</h3>
 
+<!-- BOTON VOLVER ARRIBA -->
+<button id="btn-top">⬆</button>
+
+
+<!-- ========================
+        FILTROS ARRIBA
+======================== -->
+<div class="filtros">
+
+<button class="filtro-btn activo" data-categoria="todos">Todos</button>
+<button class="filtro-btn" data-categoria="tecnologia">Tecnologia</button>
+<button class="filtro-btn" data-categoria="pinateria">piñatería</button>
+<button class="filtro-btn" data-categoria="mascotas">mascotas</button>
+<button class="filtro-btn" data-categoria="juguetes">Juguetes</button>
+<button class="filtro-btn" data-categoria="juguetes niña">juguetes de niña</button>
+
+</div>
+
+
+<!-- ========================
+        PRODUCTOS
+======================== -->
 <div class="productos" id="contenedor-productos"></div>
+
 
 <!-- ========================
       BOTONES FLOTANTES
 ======================== -->
 
 <div class="boton-carrito" onclick="abrirCarrito()">
-  🛒 <span id="contador">0</span>
+🛒 <span id="contador">0</span>
 </div>
-
 
 <div class="boton-favoritos" onclick="abrirFavoritos()">
-  ❤️ <span id="contador-favoritos">0</span>
+❤️ <span id="contador-favoritos">0</span>
 </div>
 
-<!-- Overlay ahora cierra TODO correctamente -->
+
+<!-- Overlay -->
 <div id="overlay" onclick="cerrarCarrito(); cerrarFavoritos(); cerrarModal();"></div>
+
 
 <!-- ========================
       CARRITO
 ======================== -->
 <div id="carrito">
-  <h2>🛒 Carrito</h2>
-  <div id="lista-carrito"></div>
 
-  <button class="vaciar" onclick="vaciarCarrito()">
-    Vaciar carrito
-  </button>
+<h2>🛒 Carrito</h2>
 
-  <button class="whatsapp-carrito" onclick="abrirWhatsApp()">
-    Enviar pedido por WhatsApp
-  </button>
+<div id="lista-carrito"></div>
+
+<button class="vaciar" onclick="vaciarCarrito()">
+Vaciar carrito
+</button>
+
+<button class="whatsapp-carrito" onclick="abrirWhatsApp()">
+Enviar pedido por WhatsApp
+</button>
+
 </div>
+
 
 <!-- ========================
       FAVORITOS
 ======================== -->
 <div id="favoritos-panel">
-  <h2>❤️ Favoritos</h2>
-  <div id="lista-favoritos"></div>
 
-  <button class="cerrar-favoritos" onclick="cerrarFavoritos()">
-    Cerrar
-  </button>
+<h2>❤️ Favoritos</h2>
+
+<div id="lista-favoritos"></div>
+
+<button class="cerrar-favoritos" onclick="cerrarFavoritos()">
+Cerrar
+</button>
+
 </div>
 
+
 <!-- ========================
-      MODAL PRODUCTO
+      MODAL PRODUCTO PREMIUM
 ======================== -->
 <div id="modal-producto" class="modal">
-  <div class="modal-contenido">
 
-    <span class="cerrar-modal" onclick="cerrarModal()">
-      &times;
-    </span>
+<div class="modal-contenido">
 
-    <img 
-      id="modal-imagen-principal" 
-      class="modal-imagen-principal"
-      src=""
-      alt="Producto"
-    >
+<span class="cerrar-modal" onclick="cerrarModal()">
+&times;
+</span>
 
-    <div id="modal-miniaturas" class="modal-miniaturas"></div>
+<div class="modal-grid">
 
-    <h2 id="modal-nombre"></h2>
-    <p id="modal-precio" class="modal-precio"></p>
+<!-- LADO IZQUIERDO -->
+<div class="modal-galeria">
 
-    <button 
-      id="modal-agregar" 
-      class="btn-agregar-modal"
-      type="button"
-    >
-      Agregar al carrito
-    </button>
+<img 
+id="modal-imagen-principal" 
+class="modal-imagen-principal"
+src=""
+alt="Producto"
+>
 
-  </div>
+<div id="modal-miniaturas" class="modal-miniaturas"></div>
+
+</div>
+
+<!-- LADO DERECHO -->
+<div class="modal-info">
+
+<h2 id="modal-nombre"></h2>
+
+<p id="modal-descripcion" class="modal-descripcion"></p>
+
+<p id="modal-precio" class="modal-precio"></p>
+
+<button 
+id="modal-agregar" 
+class="btn-agregar-modal"
+type="button"
+>
+Agregar al carrito
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================
+      SECCION MARCA
+======================== -->
+<section class="marca">
+
+<h2>Nuestra Esencia</h2>
+
+<p>
+Somos una marca enfocada en ofrecer productos seleccionados con estilo,
+calidad y personalidad. Creemos que cada detalle importa y que comprar
+también debe ser una experiencia.
+</p>
+
+
+<div class="valores">
+
+<a href="https://web.facebook.com/Markbom027" target="_blank">
+
+<h3><i class="fa-brands fa-facebook"></i> Calidad</h3>
+
+<p>Seguimos mejorando cada día. Síguenos en Facebook.</p>
+
+</a>
+
+
+<a href="https://www.instagram.com/juani70_07/" target="_blank">
+
+<h3><i class="fa-brands fa-instagram"></i> Estilo</h3>
+
+<p>Descubre nuestros productos en Instagram.</p>
+
+</a>
+
+
+<a href="https://wa.me/573209182052" target="_blank">
+
+<h3><i class="fa-brands fa-whatsapp"></i> Confianza</h3>
+
+<p>Habla directamente con nosotros por WhatsApp.</p>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ========================
+      BOTÓN PABLO TE AYUDA
+======================== -->
+<div class="pablo-container">
+
+<div class="pablo-options" id="pabloOptions">
+
+<a href="https://wa.me/573209182052?text=Hola,%20necesito%20ayuda%20" target="_blank" class="pablo-btn whatsapp">
+WhatsApp
+</a>
+
+</div>
+
+<button class="pablo-main" onclick="togglePablo()">
+🧑 Pablo te ayuda
+</button>
+
 </div>
     <script  src="./script.js"></script>
 
