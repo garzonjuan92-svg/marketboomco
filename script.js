@@ -22,15 +22,19 @@ function activarAnimacionScroll() {
 ========================= */
 
 const productos = [
-{ nombre: "Kit Infantil Decoración Fiesta - Cars X12 Invitados", precio: 32900, imagen: "https://http2.mlstatic.com/D_Q_NP_816141-MCO77248577888_072024-F.webp , https://picsum.photos/id/210/600/600, https://picsum.photos/id/211/600/600, https://picsum.photos/id/212/600/600", categoria: "pinateria" , descripcion: "lo que queramos poner del prodcuto" },
-{ nombre: "Relleno De Juguetes Para Piñata 52 Piezas", precio: 32000, imagen: "https://http2.mlstatic.com/D_Q_NP_968971-MCO89436938973_082025-F.webp ,https://picsum.photos/id/213/600/600, https://picsum.photos/id/214/600/600, https://picsum.photos/id/215/600/600 ", categoria: "pinateria", descripcion: "lo que queramos poner del prodcuto" },
-{ nombre: "Piñateria Pelotas Antiestres X12un Niños Fiesta Personajes Rojo", precio: 29900, imagen: "https://http2.mlstatic.com/D_Q_NP_989534-MCO91751551024_092025-F.webp , https://picsum.photos/id/208/600/600, https://picsum.photos/id/209/600/600 ", categoria: "pinateria" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Combo Bolso 37cm Reloj T800 I12", precio: 64000, imagen:
+"https://d39ru7awumhhs2.cloudfront.net/colombia/products/1490227/17317846811724261368Untitled%20Project%20(2).jpg", categoria: "tecnologia" , descripcion: "Diseño moderno tipo pechera, con compartimentos seguros uerto USB externo requiere power bankMaterial resistente al aguaIdeal para viajes, ciudad o uso diarioColor: negro" 
+},
+{ nombre: "Consola Nintendo Switch 2", precio: 2032140, imagen: "https://http2.mlstatic.com/D_Q_NP_758871-MLA96097438383_102025-F.webp,https://picsum.photos/id/225/600/600, https://picsum.photos/id/226/600/600, https://picsum.photos/id/227/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Audífonos Bluetooth Skullcandy Push Play Active Negro", precio: 259900, imagen: "https://http2.mlstatic.com/D_Q_NP_693890-MLA96170625177_102025-F.webp,https://picsum.photos/id/219/600/600, https://picsum.photos/id/220/600/600, https://picsum.photos/id/221/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Pistola Masajeadora De Percusión Portátil Con 6 Velocidades", precio: 33165, imagen: "https://http2.mlstatic.com/D_Q_NP_629990-MLA78762182346_092024-F.webp,https://picsum.photos/id/222/600/600, https://picsum.photos/id/223/600/600, https://picsum.photos/id/224/600/600", categoria: "tecnologia" , descripcion: "LO QUE QUERAMOS PONER DEL PRODUCTO" },
 { nombre: "Juguetes De Peluche Que Respira De Capibara", precio: 29625, imagen: "https://http2.mlstatic.com/D_Q_NP_710479-CBT107678290471_022026-F.webp,https://picsum.photos/id/210/600/600, https://picsum.photos/id/211/600/600, https://picsum.photos/id/212/600/600", categoria: "juguetes" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Juguete Anillos Diseno Atari De Agua", precio: 13900, imagen: "https://d39ru7awumhhs2.cloudfront.net/colombia/products/427817/169655321254121.jpg", categoria: "juguetes" , descripcion: "📏 Medidas de la pista: 66 cm de largo x 26.5 cm de alto x 8.5 cm de ancho.🎮 Control remoto incluido para manejar el carro con facilidad.🔄 Looping 360° que desafía la velocidad y pone a prueba tus reflejos.🦈 Tiburón con boca abierta listo para atrapar al carro, ¡una aventura llena de acción!🌌 Piezas con efecto Glow in the Dark, brillan en la oscuridad.🔋 Recargable por USB, práctico y ecológico.🧩 Incluye 17 piezas para armar la pista completa" },
 { nombre: "Lanzador Nerf Pro Gelfire Raid 10000 Recargable Blanco Hasbro", precio: 229900, imagen: "https://http2.mlstatic.com/D_Q_NP_898753-MLA99491192372_112025-F.webp,https://picsum.photos/id/213/600/600, https://picsum.photos/id/214/600/600, https://picsum.photos/id/215/600/600", categoria: "juguetes" , descripcion: "lo que queramos poner del prodcuto" },
 { nombre: "Carro Carreras Drift Control Remoto Niños Juguete Color Verde", precio: 74999, imagen: "https://http2.mlstatic.com/D_Q_NP_805706-MLA99506800054_112025-F.webp,https://http2.mlstatic.com/D_Q_NP_805706-MLA99506800054_112025-F.webp,https://picsum.photos/id/216/600/600, https://picsum.photos/id/217/600/600, https://picsum.photos/id/218/600/600", categoria: "juguetes" , descripcion: "lo que queramos poner del prodcuto" },
-{ nombre: "Audífonos Bluetooth Skullcandy Push Play Active Negro", precio: 259900, imagen: "https://http2.mlstatic.com/D_Q_NP_693890-MLA96170625177_102025-F.webp,https://picsum.photos/id/219/600/600, https://picsum.photos/id/220/600/600, https://picsum.photos/id/221/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
-{ nombre: "Pistola Masajeadora De Percusión Portátil Con 6 Velocidades", precio: 33165, imagen: "https://http2.mlstatic.com/D_Q_NP_629990-MLA78762182346_092024-F.webp,https://picsum.photos/id/222/600/600, https://picsum.photos/id/223/600/600, https://picsum.photos/id/224/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
-{ nombre: "Consola Nintendo Switch 2", precio: 2032140, imagen: "https://http2.mlstatic.com/D_Q_NP_758871-MLA96097438383_102025-F.webp,https://picsum.photos/id/225/600/600, https://picsum.photos/id/226/600/600, https://picsum.photos/id/227/600/600", categoria: "tecnologia" , descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Kit Infantil Decoración Fiesta - Cars X12 Invitados", precio: 32900, imagen: "https://http2.mlstatic.com/D_Q_NP_816141-MCO77248577888_072024-F.webp , https://picsum.photos/id/210/600/600, https://picsum.photos/id/211/600/600, https://picsum.photos/id/212/600/600", categoria: "pinateria" , descripcion: "LO QUE QUERAMOS PONER DEL PRODUCTO" },
+{ nombre: "Relleno De Juguetes Para Piñata 52 Piezas", precio: 32000, imagen: "https://http2.mlstatic.com/D_Q_NP_968971-MCO89436938973_082025-F.webp ,https://picsum.photos/id/213/600/600, https://picsum.photos/id/214/600/600, https://picsum.photos/id/215/600/600 ", categoria: "pinateria", descripcion: "lo que queramos poner del prodcuto" },
+{ nombre: "Piñateria Pelotas Antiestres X12un Niños Fiesta Personajes Rojo", precio: 29900, imagen: "https://http2.mlstatic.com/D_Q_NP_989534-MCO91751551024_092025-F.webp , https://picsum.photos/id/208/600/600, https://picsum.photos/id/209/600/600 ", categoria: "pinateria" , descripcion: "lo que queramos poner del prodcuto" },
 { nombre: "Cepillo De Vapor 3 En 1 Masaje Autolimpieza Peine Para Gatos Color Verde lima", precio: 6439, imagen: "https://http2.mlstatic.com/D_Q_NP_711014-MLA92882265157_092025-F.webp,https://picsum.photos/id/228/600/600, https://picsum.photos/id/229/600/600, https://picsum.photos/id/230/600/600", categoria: "mascotas" , descripcion: "lo que queramos poner del prodcuto" },
 { nombre: "Fuente Bebedero Automático Mascotas Xalta Blanco 2.4L Triple Filtro", precio: 39900, imagen: "https://http2.mlstatic.com/D_Q_NP_751796-MLA92732597215_092025-F.webp,https://picsum.photos/id/201/600/600, https://picsum.photos/id/202/600/600, https://picsum.photos/id/203/600/600", categoria: "mascotas" , descripcion: "LO QUE TOQUE PONER DEL PRODUCTO" }
 ];
@@ -231,6 +235,7 @@ function mostrarProductos(lista = productos) {
 let carrito = JSON.parse(localStorage.getItem("carrito")) || {};
 
 function agregarAlCarrito(nombre, precio) {
+
   if (!carrito[nombre]) {
     carrito[nombre] = { cantidad: 1, precio: precio };
   } else {
@@ -486,3 +491,23 @@ document.querySelectorAll("#menuLateral a[data-categoria]").forEach(link => {
   });
 
 });
+function filtrarCategoria(categoria) {
+  const productos = document.querySelectorAll(".producto");
+
+  productos.forEach(producto => {
+    if (categoria === "todos") {
+      producto.style.display = "block";
+    } else {
+      if (producto.dataset.categoria === categoria) {
+        producto.style.display = "block";
+      } else {
+        producto.style.display = "none";
+      }
+    }
+  });
+
+  // bajar a la sección de productos
+  document.querySelector("#productos").scrollIntoView({
+    behavior: "smooth"
+  });
+}

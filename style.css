@@ -1109,3 +1109,396 @@ color:#25D366;
 font-size:22px;
 margin-right:6px;
 }
+/* BOTON PROFESIONAL */
+
+.btn-agregar{
+background:linear-gradient(135deg,#ff7a18,#ffb347);
+border:none;
+padding:10px 15px;
+border-radius:8px;
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-agregar:hover{
+transform:scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+.confianza{
+display:flex;
+justify-content:center;
+gap:40px;
+background:var(--color-card);
+padding:25px;
+margin:30px 0;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+flex-wrap:wrap;
+}
+
+.confianza-item{
+text-align:center;
+font-size:18px;
+color:#333;
+}
+
+.confianza-item p{
+margin-top:8px;
+font-size:14px;
+}
+body.dark .beneficios{
+background: #111;
+}
+
+body.dark .beneficio h3{
+color: white;
+}
+
+body.dark .beneficio p{
+color: #ccc;
+}
+/* =========================
+   BANNER PROMOCIONAL
+========================= */
+
+.banner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+background:linear-gradient(135deg,#ffd54f,#ffb300);
+
+padding:40px;
+border-radius:15px;
+
+margin:20px;
+gap:20px;
+}
+
+.banner-texto h2{
+margin:0;
+font-size:50px;
+color:#111;
+}
+
+.banner-texto p{
+margin:20px 0;
+color:#222;
+}
+
+.banner button{
+background:#111;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.banner img{
+width:400px;
+border-radius:px;
+}
+@media(max-width:768px){
+
+.banner{
+flex-direction:column;
+text-align:center;
+}
+
+.banner img{
+width:150px;
+}
+
+}
+.banner-oferta {
+  background-image: linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    ),
+    url("img/banner.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+.banner img{
+height:250px;
+border-radius:10px;
+}
+.badge{
+position:absolute;
+top:10px;
+left:10px;
+background:red;
+color:white;
+padding:3px 8px;
+font-size:12px;
+border-radius:6px;
+}
+html{
+scroll-behavior:smooth;
+}
+/* TITULO OFERTAS */
+
+.titulo-ofertas{
+text-align:center;
+color:#f5c542;
+font-size:24px;
+margin-top:60px;
+margin-bottom:30px;
+letter-spacing:2px;
+}
+
+
+/* GRID OFERTAS */
+
+.ofertas-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+
+/* TARJETAS PRODUCTOS */
+
+.ofertas-grid .producto{
+background:#111;
+padding:15px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+
+/* EFECTO HOVER */
+
+.ofertas-grid .producto:hover{
+transform:scale(1.05);
+}
+
+
+/* IMAGENES */
+
+.ofertas-grid img{
+width:100%;
+border-radius:8px;
+}
+del{
+color:#888;
+}
+
+.ofertas-grid p{
+color:#00ff88;
+font-weight:bold;
+}
+/* TITULO OFERTAS */
+
+.titulo-ofertas{
+text-align:center;
+color:#f5c542;
+font-size:24px;
+margin-top:60px;
+margin-bottom:30px;
+letter-spacing:2px;
+}
+
+
+/* GRID OFERTAS */
+
+.ofertas-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+
+/* TARJETA PRODUCTO */
+
+.producto{
+background:#111;
+padding:15px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+transition:0.3s;
+position:relative;
+}
+
+
+/* HOVER */
+
+.producto:hover{
+transform:scale(1.05);
+}
+
+
+/* IMAGEN */
+
+.producto img{
+width:100%;
+border-radius:8px;
+}
+
+
+/* ETIQUETA OFERTA */
+
+.etiqueta-oferta{
+
+position:absolute;
+
+top:10px;
+left:10px;
+
+background:#ff2e2e;
+color:white;
+
+padding:6px 12px;
+
+font-size:14px;
+font-weight:bold;
+
+border-radius:6px;
+
+box-shadow:0 3px 10px rgba(0,0,0,0.5);
+
+}
+/* BOTON COMPRAR */
+
+.btn-comprar{
+
+background:#ff7a18;
+color:white;
+
+border:none;
+
+padding:10px 15px;
+
+border-radius:6px;
+
+font-weight:bold;
+
+margin-top:10px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+
+/* EFECTO SOLO EN COMPUTADOR */
+
+@media (hover: hover){
+
+.btn-comprar{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+.producto:hover .btn-comprar{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+/* EFECTO TARJETA */
+
+.producto:hover{
+
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transform:translateY(-5px);
+
+}
+.btn-comprar{
+
+background:linear-gradient(45deg,#ff7a18,#ffb347);
+
+color:white;
+
+border:none;
+
+padding:10px 15px;
+
+border-radius:6px;
+
+font-weight:bold;
+
+margin-top:10px;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+transition:0.3s;
+
+}
+
+
+/* EFECTO BRILLO */
+
+.btn-comprar::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.6),
+transparent
+);
+
+transition:0.5s;
+
+}
+
+.btn-comprar:hover::before{
+
+left:100%;
+
+}
+
+
+/* EFECTO AL PRESIONAR */
+
+.btn-comprar:active{
+
+transform:scale(0.95);
+
+}
+*{
+transition:0.2s;
+}
+img{
+max-width:100%;
+height:auto;
+}
+img{
+display:block;
+}

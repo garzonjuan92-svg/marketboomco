@@ -9,7 +9,7 @@
   </head>
     
   <body>
-  <head>
+  <head> 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -48,7 +48,35 @@
 
 <button id="toggle-tema">🌙</button>
 
+
+<!-- ========================
+      BANNER PROMOCIONAL
+======================== -->
+
+<div class="banner">
+
+  <div class="banner-texto">
+    <h2>🔥 Oferta especial</h2>
+    <p>Consigue los mejores productos al mejor precio.</p>
+
+   <a href="#contenedor-andres">
+<button>
+Ver productos
+</button>
+</a>
+  </div>
+
+  <img 
+    id="banner-img"
+    src="https://images.unsplash.com/photo-1606813902914-7f4d5fce8f2c"
+    alt="Producto destacado"
+  >
+
+</div>
+
+
 <h3 class="titulo">Market Boom Co ✨</h3>
+
 
 <!-- BOTON VOLVER ARRIBA -->
 <button id="btn-top">⬆</button>
@@ -61,10 +89,10 @@
 
 <button class="filtro-btn activo" data-categoria="todos">Todos</button>
 <button class="filtro-btn" data-categoria="tecnologia">Tecnologia</button>
+<button class="filtro-btn" data-categoria="juguetes">Juguetes</button>
 <button class="filtro-btn" data-categoria="pinateria">piñatería</button>
 <button class="filtro-btn" data-categoria="mascotas">mascotas</button>
-<button class="filtro-btn" data-categoria="juguetes">Juguetes</button>
-<button class="filtro-btn" data-categoria="juguetes niña">juguetes de niña</button>
+
 
 </div>
 
@@ -74,6 +102,78 @@
 ======================== -->
 <div class="productos" id="contenedor-productos"></div>
 
+<h3 class="titulo-ofertas">LAS MEJORES OFERTAS ESPECIALES DEL AÑO ✨</h3>
+
+<div class="ofertas-grid" id="contenedor-andres">
+
+<div class="producto oferta">
+
+<span class="etiqueta-oferta">-25%</span>
+
+<img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f" width="200">
+
+<h4>Producto de prueba 1</h4>
+
+<p><del>$80.000</del> $50.000</p>
+<button class="btn-comprar"
+onclick="window.open('https://wa.me/573209182052','_blank')">
+🛒Comprar ahora
+</button>
+
+</div>
+
+
+<div class="producto oferta">
+
+<span class="etiqueta-oferta">-25%</span>
+
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348" width="200">
+
+<h4>Producto de prueba 2</h4>
+
+<p><del>$80.000</del> $50.000</p>
+<button class="btn-comprar"
+onclick="window.open('https://wa.me/573209182052','_blank')">
+🛒Comprar ahora
+</button>
+
+</div>
+
+
+<div class="producto oferta">
+
+<span class="etiqueta-oferta">-50%</span>
+
+<img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95" width="200">
+
+<h4>Producto de prueba 3</h4>
+
+<p><del>$80.000</del> $50.000</p>
+<button class="btn-comprar"
+onclick="window.open('https://wa.me/573209182052','_blank')">
+🛒Comprar ahora
+</button>
+
+</div>
+
+
+<div class="producto oferta">
+
+<span class="etiqueta-oferta">-50%</span>
+
+<img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f" width="200">
+
+<h4>Producto de prueba 4</h4>
+
+<p><del>$80.000</del> $50.000</p>
+<button class="btn-comprar"
+onclick="window.open('https://wa.me/573209182052','_blank')">
+🛒Comprar ahora
+</button>
+
+</div>
+
+</div>
 
 <!-- ========================
       BOTONES FLOTANTES
@@ -246,6 +346,65 @@ WhatsApp
 </button>
 
 </div>
+
+
+<!-- ========================
+      SCRIPT PARA BANNER
+======================== -->
+<script>
+
+function irAProductos() {
+
+const seccion = document.getElementById("contenedor-productos");
+
+if(seccion){
+seccion.scrollIntoView({
+behavior: "smooth"
+});
+}
+
+}
+
+</script>
+
+
+<script>
+
+const imagenesBanner = [
+
+"https://i.pinimg.com/1200x/d9/2b/d9/d92bd92e012c49038c408b018b9caf09.jpg",
+
+"https://i.pinimg.com/736x/bc/d1/17/bcd117deaf1d48b876518eaa451361a6.jpg",
+
+"https://i.pinimg.com/736x/7a/ae/95/7aae958bdd8866f8003a4f43ec6edefe.jpg",
+
+"https://img.freepik.com/vector-premium/etiqueta-venta-50-rojo-blanco-contorno-negro-estrellas-fondo-marron-oscuro_1302918-75029.jpg",
+
+"https://i.pinimg.com/736x/ad/27/4c/ad274ce001a9741b7649c2f5ae932427.jpg"
+
+];
+
+let indiceBanner = 0;
+
+function cambiarBanner(){
+
+const banner = document.getElementById("banner-img");
+
+if(!banner) return;
+
+indiceBanner++;
+
+if(indiceBanner >= imagenesBanner.length){
+indiceBanner = 0;
+}
+
+banner.src = imagenesBanner[indiceBanner];
+
+}
+
+setInterval(cambiarBanner, 4000);
+
+</script>
     <script  src="./script.js"></script>
 
   </body>
